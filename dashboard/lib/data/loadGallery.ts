@@ -32,13 +32,17 @@ function normalizeTile(raw: RawGalleryTile): GalleryTile | null {
 }
 
 export async function loadGalleryIndex(): Promise<GalleryIndex> {
-  const res = await fetch("/data/gallery/index.json", { cache: "no-store" });
-  if (!res.ok) {
-    throw new Error("Failed to load gallery index");
+  try {
+    const res = await fetch("/data/gallery/index.json", { cache: "no-store" });
+    if (!res.ok) {
+      return { tiles: [] };
+    }
+    const data = (await res.json()) as { tiles?: RawGalleryTile[] };
+    const tiles = (data.tiles ?? [])
+      .map(normalizeTile)
+      .filter((t): t is GalleryTile => t !== null);
+    return { tiles };
+  } catch {
+    return { tiles: [] };
   }
-  const data = (await res.json()) as { tiles?: RawGalleryTile[] };
-  const tiles = (data.tiles ?? [])
-    .map(normalizeTile)
-    .filter((t): t is GalleryTile => t !== null);
-  return { tiles };
 }
