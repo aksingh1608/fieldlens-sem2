@@ -10,7 +10,8 @@ FieldLens predicts crop-anomaly masks on aerial farm tiles (RGB + NIR) and can r
 
 | Want to… | Go here |
 |----------|---------|
-| See the live UI | `dashboard/` → `npm run dev` → http://localhost:3000 |
+| See the live UI | https://fieldlens-sem2-i2gx.vercel.app (or `dashboard/` → `npm run dev`) |
+| See the code on GitHub | https://github.com/aksingh1608/fieldlens-sem2 |
 | See report graphs | [`notebooks/figures/`](notebooks/figures/) |
 | See page screenshots | [`docs/screenshots/`](docs/screenshots/) |
 | Local image pack (gallery + graphs + screenshots) | `data/images/` (gitignored) |
@@ -230,7 +231,7 @@ cd ../dashboard && npm install && npm run dev
 - Class imbalance and rare classes hurt IoU.
 - Robustness sweeps need `--robustness` on eval (empty on current pilot export).
 - Overlap pixels are rare in small pilots.
-- Full-scale training, Jetson-class notes, and a public URL (DOMAIN_TBD) remain open.
+- Full-scale training, Jetson-class notes, and hardening the public deploy remain open. Live UI: https://fieldlens-sem2-i2gx.vercel.app
 
 ---
 

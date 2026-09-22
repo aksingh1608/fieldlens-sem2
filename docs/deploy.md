@@ -52,7 +52,7 @@ When the production hostname is chosen:
 
 ## GitHub link
 
-Footer GitHub URL placeholder: `https://github.com/PLACEHOLDER/FieldLens`. Replace `PLACEHOLDER` with the org or user name before public launch.
+Footer and Overview GitHub links use `https://github.com/aksingh1608/fieldlens-sem2` (`GITHUB_URL` in `dashboard/lib/constants.ts`).
 
 ## ONNX model (optional Phase 10)
 

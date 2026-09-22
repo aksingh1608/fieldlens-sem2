@@ -1,9 +1,9 @@
 export const PILOT_DISCLAIMER =
   "FieldLens is a research pilot. Results are trends from small runs on a data subset, not benchmark numbers.";
 
-export const GITHUB_URL = "https://github.com/PLACEHOLDER/FieldLens";
+export const GITHUB_URL = "https://github.com/aksingh1608/fieldlens-sem2";
 
-export const DOMAIN_PLACEHOLDER = "DOMAIN_TBD";
+export const DOMAIN_PLACEHOLDER = "https://fieldlens-sem2-i2gx.vercel.app";
 
 export const RUNS = [
   { id: "run1" as const, name: "Run 1", input: "RGB", head: "Softmax (9 classes)" },
