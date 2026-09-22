@@ -93,12 +93,15 @@ def set_lrs(optimizer: torch.optim.Optimizer, enc_lr: float, other_lr: float) ->
 
 
 @torch.no_grad()
-def validate(model, loader, device, head: str, threshold: float, loss_fn, amp: bool) -> tuple[float, float]:
-    """Return (modified mIoU, mean val loss) from one pass over the loader."""
+def validate(model, loader, device, head: str, threshold: float, loss_fn, amp: bool) -> dict[str, float]:
+    """One val pass. Returns losses, pixel accuracy, standard mIoU, modified mIoU."""
     model.eval()
-    conf = np.zeros((NUM_CLASSES, NUM_CLASSES), dtype=np.int64)
+    conf_mod = np.zeros((NUM_CLASSES, NUM_CLASSES), dtype=np.int64)
+    conf_std = np.zeros((NUM_CLASSES, NUM_CLASSES), dtype=np.int64)
     loss_sum = 0.0
     batches = 0
+    correct = 0
+    total = 0
     for batch in loader:
         images = batch["image"].to(device)
         with autocast(device, amp):
@@ -116,14 +119,29 @@ def validate(model, loader, device, head: str, threshold: float, loss_fn, amp: b
         logits_np = logits.float().cpu().numpy()
         for b in range(images.size(0)):
             pred = logits_to_pred_class(logits_np[b], head=head, threshold=threshold)
-            update_agri_confusion(
-                conf,
-                pred,
-                batch["multilabel"][b].numpy(),
-                batch["valid"][b].numpy(),
-            )
-    _, miou = iou_from_confusion(conf)
-    return float(miou), loss_sum / max(batches, 1)
+            gt_multi = batch["multilabel"][b].numpy()
+            valid = batch["valid"][b].numpy().astype(bool)
+            single = batch["singlelabel"][b].numpy()
+            update_agri_confusion(conf_mod, pred, gt_multi, valid)
+            # Standard single label confusion on valid pixels
+            pv = pred[valid]
+            sv = single[valid]
+            for c in range(NUM_CLASSES):
+                mask = sv == c
+                if not mask.any():
+                    continue
+                conf_std[c] += np.bincount(pv[mask], minlength=NUM_CLASSES)
+            correct += int(np.count_nonzero(pv == sv))
+            total += int(valid.sum())
+    _, mod_miou = iou_from_confusion(conf_mod)
+    _, std_miou = iou_from_confusion(conf_std)
+    acc = float(correct / total) if total else 0.0
+    return {
+        "val_loss": loss_sum / max(batches, 1),
+        "val_pixel_accuracy": acc,
+        "val_miou": float(std_miou),
+        "val_modified_miou": float(mod_miou),
+    }
 
 
 def train_one_epoch(model, loader, optimizer, scaler, loss_fn, device, cfg, accum, amp):
@@ -131,8 +149,11 @@ def train_one_epoch(model, loader, optimizer, scaler, loss_fn, device, cfg, accu
     running = 0.0
     steps = 0
     pending = 0
+    correct = 0
+    total = 0
     optimizer.zero_grad(set_to_none=True)
     head = cfg["model"]["head"]
+    threshold = float(cfg.get("threshold", 0.5))
 
     def step() -> None:
         scaler.step(optimizer)
@@ -160,6 +181,14 @@ def train_one_epoch(model, loader, optimizer, scaler, loss_fn, device, cfg, accu
                 pending = 0
             running += loss.item() * accum
             steps += 1
+            with torch.no_grad():
+                logits_np = logits.float().cpu().numpy()
+                for b in range(images.size(0)):
+                    pred = logits_to_pred_class(logits_np[b], head=head, threshold=threshold)
+                    valid = batch["valid"][b].numpy().astype(bool)
+                    single = batch["singlelabel"][b].numpy()
+                    correct += int(np.count_nonzero(pred[valid] == single[valid]))
+                    total += int(valid.sum())
         except torch.cuda.OutOfMemoryError:
             print(
                 "CUDA out of memory. Try a smaller batch_size and raise "
@@ -169,7 +198,10 @@ def train_one_epoch(model, loader, optimizer, scaler, loss_fn, device, cfg, accu
     if pending:
         # Trailing micro-batches when the epoch length is not a multiple of accum.
         step()
-    return running / max(steps, 1)
+    return {
+        "train_loss": running / max(steps, 1),
+        "train_pixel_accuracy": float(correct / total) if total else 0.0,
+    }
 
 
 def main() -> None:
@@ -300,7 +332,19 @@ def main() -> None:
     if not log_csv.exists():
         with log_csv.open("w", newline="") as f:
             csv.writer(f).writerow(
-                ["epoch", "train_loss", "val_loss", "val_miou", "lr_encoder", "lr_other", "epoch_sec", "peak_vram_mb"]
+                [
+                    "epoch",
+                    "train_loss",
+                    "val_loss",
+                    "train_pixel_accuracy",
+                    "val_pixel_accuracy",
+                    "val_miou",
+                    "val_modified_miou",
+                    "lr_encoder",
+                    "lr_other",
+                    "epoch_sec",
+                    "peak_vram_mb",
+                ]
             )
 
     epochs = cfg["optim"]["epochs"]
@@ -315,10 +359,10 @@ def main() -> None:
         if device.type == "cuda":
             torch.cuda.reset_peak_memory_stats()
         t0 = time.perf_counter()
-        train_loss = train_one_epoch(
+        train_stats = train_one_epoch(
             model, train_loader, optimizer, scaler, loss_fn, device, cfg, accum, amp
         )
-        val_miou, val_loss = validate(
+        val_stats = validate(
             model, val_loader, device, cfg["model"]["head"], threshold, loss_fn, amp
         )
         epoch_sec = time.perf_counter() - t0
@@ -326,14 +370,33 @@ def main() -> None:
 
         with log_csv.open("a", newline="") as f:
             csv.writer(f).writerow(
-                [epoch, f"{train_loss:.6f}", f"{val_loss:.6f}", f"{val_miou:.6f}", f"{enc_lr:.8f}", f"{other_lr:.8f}", f"{epoch_sec:.2f}", f"{peak:.1f}"]
+                [
+                    epoch,
+                    f"{train_stats['train_loss']:.6f}",
+                    f"{val_stats['val_loss']:.6f}",
+                    f"{train_stats['train_pixel_accuracy']:.6f}",
+                    f"{val_stats['val_pixel_accuracy']:.6f}",
+                    f"{val_stats['val_miou']:.6f}",
+                    f"{val_stats['val_modified_miou']:.6f}",
+                    f"{enc_lr:.8f}",
+                    f"{other_lr:.8f}",
+                    f"{epoch_sec:.2f}",
+                    f"{peak:.1f}",
+                ]
             )
-        writer.add_scalar("loss/train", train_loss, epoch)
-        writer.add_scalar("loss/val", val_loss, epoch)
-        writer.add_scalar("metrics/val_miou", val_miou, epoch)
+        writer.add_scalar("loss/train", train_stats["train_loss"], epoch)
+        writer.add_scalar("loss/val", val_stats["val_loss"], epoch)
+        writer.add_scalar("metrics/val_pixel_accuracy", val_stats["val_pixel_accuracy"], epoch)
+        writer.add_scalar("metrics/val_miou", val_stats["val_miou"], epoch)
+        writer.add_scalar("metrics/val_modified_miou", val_stats["val_modified_miou"], epoch)
         print(
-            f"epoch={epoch} train_loss={train_loss:.4f} val_loss={val_loss:.4f} "
-            f"val_miou={val_miou:.4f} sec={epoch_sec:.1f} peak_vram_mb={peak:.1f}"
+            f"epoch={epoch} train_loss={train_stats['train_loss']:.4f} "
+            f"val_loss={val_stats['val_loss']:.4f} "
+            f"train_acc={train_stats['train_pixel_accuracy']:.4f} "
+            f"val_acc={val_stats['val_pixel_accuracy']:.4f} "
+            f"val_miou={val_stats['val_miou']:.4f} "
+            f"val_mod_miou={val_stats['val_modified_miou']:.4f} "
+            f"sec={epoch_sec:.1f} peak_vram_mb={peak:.1f}"
         )
 
         ckpt = {
@@ -347,8 +410,8 @@ def main() -> None:
         torch.save(ckpt, ckpt_dir / "last.pt")
         if args.save_every_epoch:
             torch.save(ckpt, ckpt_dir / f"epoch_{epoch:03d}.pt")
-        if val_miou > best_miou:
-            best_miou = val_miou
+        if val_stats["val_modified_miou"] > best_miou:
+            best_miou = val_stats["val_modified_miou"]
             ckpt["best_miou"] = best_miou
             torch.save(ckpt, ckpt_dir / "best.pt")
 

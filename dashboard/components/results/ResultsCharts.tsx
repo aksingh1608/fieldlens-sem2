@@ -87,21 +87,18 @@ export function TrainingCurvesSection({ data }: { data: ResultsJson }) {
 }
 
 export function PrCurvesSection({ data }: { data: ResultsJson }) {
-  const run2 = data.pr_curves?.run2;
-  const run3 = data.pr_curves?.run3;
+  const runBlocks = (["run1", "run2", "run3"] as const).map((id) => ({
+    title: `${id} PR curves`,
+    series: data.pr_curves?.[id] ?? null,
+  }));
 
-  if ((!run2 || run2.length === 0) && (!run3 || run3.length === 0)) {
+  if (runBlocks.every((b) => !b.series || b.series.length === 0)) {
     return <DataUnavailable label="PR curves not available yet" />;
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
-      {(
-        [
-          { title: "Run 2 PR curves", series: run2 },
-          { title: "Run 3 PR curves", series: run3 },
-        ] as const
-      ).map(({ title, series }) => {
+    <div className="grid gap-6 lg:grid-cols-3">
+      {runBlocks.map(({ title, series }) => {
         if (!series || series.length === 0) {
           return (
             <div key={title}>
@@ -136,7 +133,10 @@ export function PrCurvesSection({ data }: { data: ResultsJson }) {
                     domain={[0, 1]}
                     label={{ value: "Recall", position: "insideBottom", offset: -2 }}
                   />
-                  <YAxis domain={[0, 1]} label={{ value: "Precision", angle: -90, position: "insideLeft" }} />
+                  <YAxis
+                    domain={[0, 1]}
+                    label={{ value: "Precision", angle: -90, position: "insideLeft" }}
+                  />
                   <Tooltip />
                   <Legend />
                   {classIds.map((id, i) => (

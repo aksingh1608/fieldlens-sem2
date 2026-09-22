@@ -10,13 +10,19 @@ const RUN_LABELS: Record<string, string> = {
 
 function metricValue(
   data: RunDetailMetrics | null,
-  key: "pixel_miou" | "modified_miou" | "tile_alert_f1",
+  key: "pixel_miou" | "modified_miou" | "tile_alert_f1" | "pixel_accuracy",
 ): number | null {
   if (!data) return null;
-  const top = data[key];
+  const top = (data as Record<string, unknown>)[key];
   if (typeof top === "number") return top;
   const nested = data.metrics as Record<string, unknown> | null | undefined;
-  const fromNested = nested?.[key === "modified_miou" ? "modified_miou" : key];
+  const mapKey =
+    key === "modified_miou"
+      ? "modified_miou"
+      : key === "pixel_accuracy"
+        ? "pixel_accuracy"
+        : key;
+  const fromNested = nested?.[mapKey];
   return typeof fromNested === "number" ? fromNested : null;
 }
 
@@ -44,7 +50,7 @@ export function RunMetricsTable({
               Run
             </th>
             <th scope="col" className="px-4 py-3 font-medium">
-              Pixel mIoU
+              Pixel accuracy
             </th>
             <th scope="col" className="px-4 py-3 font-medium">
               Modified mIoU
@@ -64,7 +70,7 @@ export function RunMetricsTable({
                 {RUN_LABELS[id]}
               </th>
               <td className="px-4 py-3 text-zinc-700 dark:text-zinc-300">
-                {data ? formatNumber(metricValue(data, "pixel_miou")) : <DataUnavailable />}
+                {data ? formatNumber(metricValue(data, "pixel_accuracy")) : <DataUnavailable />}
               </td>
               <td className="px-4 py-3 text-zinc-700 dark:text-zinc-300">
                 {data ? formatNumber(metricValue(data, "modified_miou")) : <DataUnavailable />}

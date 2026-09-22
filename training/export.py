@@ -320,6 +320,109 @@ def write_run_predictions(
     return tile_compare
 
 
+def build_dashboard_aggregates(runs: list[str], profile_name: str, results_runs: dict) -> dict:
+    """Fill top level training_curves, pr_curves, robustness, efficiency for the site."""
+    from fieldlens.constants import ANOMALY_CLASSES
+
+    training_curves = []
+    metrics_keys = [
+        "train_loss",
+        "val_loss",
+        "train_pixel_accuracy",
+        "val_pixel_accuracy",
+        "val_miou",
+        "val_modified_miou",
+    ]
+    for run in runs:
+        log = results_runs.get(run, {}) or {}
+        rows = log.get("training_log") or []
+        if not rows:
+            continue
+        epochs = [int(float(r["epoch"])) for r in rows if "epoch" in r]
+        for key in metrics_keys:
+            if key not in rows[0]:
+                # Legacy logs used val_miou only
+                if key == "val_modified_miou" and "val_miou" in rows[0]:
+                    vals = [float(r["val_miou"]) for r in rows]
+                else:
+                    continue
+            else:
+                vals = [float(r[key]) for r in rows]
+            training_curves.append(
+                {"run_id": run, "metric": key, "epochs": epochs, "values": vals}
+            )
+
+    pr_out: dict = {}
+    for run in runs:
+        block = (results_runs.get(run) or {}).get("pr_curves")
+        if not isinstance(block, dict):
+            continue
+        series = []
+        for c in ANOMALY_CLASSES:
+            curve = block.get(c) or {}
+            rec = curve.get("recall") or []
+            prec = curve.get("precision") or []
+            points = [{"x": float(r), "y": float(p)} for r, p in zip(rec, prec)]
+            series.append(
+                {
+                    "class_id": c,
+                    "class_label": c.replace("_", " "),
+                    "points": points or None,
+                }
+            )
+        pr_out[run] = series
+
+    # Robustness: list of {condition, run1_miou, ...}
+    sev_map: dict[int, dict] = {}
+    for run in runs:
+        rob = (results_runs.get(run) or {}).get("robustness")
+        if not isinstance(rob, list):
+            continue
+        for p in rob:
+            sev = int(p["severity"])
+            sev_map.setdefault(sev, {"condition": f"severity_{sev}"})
+            sev_map[sev][f"{run}_miou"] = float(p["modified_miou"])
+    robustness = [sev_map[k] for k in sorted(sev_map.keys())] or None
+
+    efficiency = []
+    for run in runs:
+        eff = (results_runs.get(run) or {}).get("efficiency") or {}
+        log = (results_runs.get(run) or {}).get("training_log") or []
+        mean_epoch = None
+        if log:
+            secs = [float(r["epoch_sec"]) for r in log if float(r.get("epoch_sec", 0)) > 10]
+            if not secs:
+                secs = [float(r["epoch_sec"]) for r in log if "epoch_sec" in r]
+            if secs:
+                mean_epoch = float(sum(secs) / len(secs))
+        if not eff and mean_epoch is None:
+            continue
+        efficiency.append(
+            {
+                "run_id": run,
+                "params_m": (eff.get("parameters") / 1e6) if eff.get("parameters") else None,
+                "train_sec_per_epoch": mean_epoch,
+                "infer_ms_per_tile": (
+                    eff.get("mean_infer_sec_gpu") * 1000.0
+                    if eff.get("mean_infer_sec_gpu") is not None
+                    else None
+                ),
+                "vram_gb_peak": (
+                    eff.get("peak_vram_mb") / 1024.0
+                    if eff.get("peak_vram_mb") is not None
+                    else None
+                ),
+            }
+        )
+
+    return {
+        "training_curves": training_curves or None,
+        "pr_curves": pr_out or None,
+        "robustness": robustness,
+        "efficiency": efficiency or None,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     add_profile_arg(parser)
@@ -432,6 +535,9 @@ def main() -> None:
 
     if all(results["runs"].get(r) and results["runs"][r].get("metrics") for r in args.runs):
         results["status"] = "complete" if results.get("tile_compare") else "partial"
+
+    aggregates = build_dashboard_aggregates(list(args.runs), args.profile, results["runs"])
+    results.update(aggregates)
 
     (out_root / "results.json").write_text(json.dumps(results, indent=2))
     print(f"Wrote {out_root / 'results.json'}")

@@ -77,6 +77,18 @@ export default function OverviewPage() {
           </p>
         </div>
 
+        <div>
+          <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+            Scale and next steps
+          </h2>
+          <p className="mt-2 text-zinc-700 dark:text-zinc-300">
+            This pilot uses 2,700 of the 94,986 labelled Agriculture-Vision tiles (1,500 train,
+            400 val, 800 test), selected by field under profile pilot_v2. The main research uses
+            the full dataset, which needs a larger GPU and longer training, and is in progress
+            (profile full is a placeholder only).
+          </p>
+        </div>
+
         <div className="flex flex-wrap gap-3">
           <Link
             href={GITHUB_URL}

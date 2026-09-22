@@ -86,6 +86,7 @@ export interface ResultsJson {
   };
   tile_compare?: TileCompareEntry[] | null;
   pr_curves?: {
+    run1?: PrCurveSeries[] | null;
     run2?: PrCurveSeries[] | null;
     run3?: PrCurveSeries[] | null;
   };

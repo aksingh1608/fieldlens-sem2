@@ -2,22 +2,14 @@
 
 Pilot disclaimer: FieldLens is a research pilot. Results are trends from small runs on a data subset, not benchmark numbers.
 
-## What it is
+## 1. What it is
 
-FieldLens is a computer vision pilot for crop health from drone imagery. Given an RGB tile (and NIR when used), it predicts pixel masks for field anomalies and can raise a tile level alert with class name and coverage.
+FieldLens is a drone crop health vision system. It predicts pixel masks for field anomalies on aerial tiles and can raise a tile level alert with class name and coverage.
 
-It supports an MSc robot vision assignment and a small CVPR style research pilot on multi label heads and RGB–NIR fusion.
-
-## Problem
-
-Farmers need early detection of planting and field problems across large areas. Manual scouting does not scale. Agriculture-Vision provides labelled aerial tiles, but overlapping anomaly labels make single label softmax a poor fit. Near infrared (NIR) may add signal for vegetation stress.
-
-## Research questions
+## 2. Research questions and runs
 
 1. When labels overlap, does a multi label sigmoid head beat a single label softmax head?
-2. Does gated RGB–NIR fusion improve multi label segmentation on top of that?
-
-## Three runs
+2. Does gated RGB and NIR fusion improve multi label segmentation?
 
 | Run | Input | Head |
 |-----|-------|------|
@@ -25,100 +17,90 @@ Farmers need early detection of planting and field problems across large areas. 
 | Run 2 | RGB | Sigmoid multi label (8 anomalies) |
 | Run 3 | RGB + NIR gated fusion | Sigmoid multi label |
 
-Encoder: SegFormer MiT-B0 for the pilot profiles.
+## 3. Dataset
 
-## Dataset
+Agriculture-Vision 2021 supervised split: 94,986 labelled 512 by 512 tiles with RGB and NIR, and eight anomaly classes (`double_plant`, `drydown`, `endrow`, `nutrient_deficiency`, `planter_skip`, `water`, `waterway`, `weed_cluster`).
 
-Agriculture-Vision 2021 supervised split: 94,986 labelled 512×512 tiles with RGB and NIR, and eight anomaly classes (`double_plant`, `drydown`, `endrow`, `nutrient_deficiency`, `planter_skip`, `water`, `waterway`, `weed_cluster`).
+This pilot uses **2,700 tiles** (1,500 train, 400 val, 800 test) selected by whole field separation. Profile **pilot_v2** caps tiles per field (10 / 10 / 5) so more fields enter each split (plan: 202 / 60 / 188 fields).
 
-This pilot uses **2,700 tiles** (1,500 train, 400 val, 800 test), selected by whole field separation so no field id appears in two splits.
+Profile **pilot** (v1) kept the same tile counts but only 31 / 15 / 18 fields, so class mixes differed across splits. Keep v1 under `runs/pilot/` as a finding, not as headline results.
 
-**pilot_v2** (recommended) adds `max_tiles_per_field` (10 / 10 / 5) so more fields enter each split and class mixes stay closer. A plan under `pilot_v2` used 202 / 60 / 188 fields for train / val / test.
+The full official split needs a larger GPU and longer training. That is profile `full` (placeholders, untested) and is future work for the main research.
 
-**pilot** (v1) kept the same tile counts but few fields (31 / 15 / 18). That skewed class mixes (for example drydown tile counts 80 / 1 / 566). Keep v1 outputs under `runs/pilot/` and `data/fieldlens/pilot/` as a finding, not as headline results. Prefer `pilot_v2` for new training.
+## 4. Method
 
-The full official split (56,944 / 18,334 / 19,708) needs a larger GPU and longer schedule. That is profile `full` (placeholders, untested) and is future work.
+SegFormer MiT-B0 encoder with an All-MLP decoder. Run 1 uses softmax. Runs 2 and 3 use sigmoid multi label heads. Run 3 adds a NIR stem and gated fusion (AgriFusion component). See the Method page architecture diagram and `training/fieldlens/models.py`.
 
-## Results (pilot v1 only)
+## 5. Results (pilot v1 files only)
 
-Filled only from files under `runs/pilot/*/eval/metrics.json` and `runs/pilot/*/log.csv`. These are pilot trends on the v1 field mix, **not** benchmarks. Re-run under `--profile pilot_v2` before treating numbers as the main result.
+From `runs/pilot/*/eval/metrics.json` and `runs/pilot/*/log.csv`. Not benchmarks.
 
-| Run | Test modified mIoU | Peak train VRAM (MB) | Mean epoch time (s) | Total train time (s, 10 epochs) |
-|-----|-------------------:|---------------------:|--------------------:|--------------------------------:|
+| Run | Test modified mIoU | Peak train VRAM (MB) | Mean epoch (s) | Total 10 epochs (s) |
+|-----|-------------------:|---------------------:|---------------:|--------------------:|
 | Run 1 | 0.1444 | 1198.1 | 48.7 | 487.2 |
 | Run 2 | 0.1356 | 1194.1 | 56.3 | 562.8 |
 | Run 3 | 0.1287 | 1288.7 | 65.1 | 651.2 |
 
-Sources: `runs/pilot/run*/eval/metrics.json` (`modified_miou`) and `runs/pilot/run*/log.csv` (full epochs with `epoch_sec` > 10). Pixel accuracy is added in the current `evaluate.py` for future exports; v1 metric files do not contain it.
+pilot_v2 results: fill this table only after `runs/pilot_v2/*/eval/metrics.json` exists.
 
-pilot_v2 results: not trained yet. Leave this table empty until eval files exist under `runs/pilot_v2/`.
+## 6. Key figures
 
-## Key figures
+After the report script or notebook runs, figures are in `notebooks/figures/` (sample tiles, drone conditions, class distribution, loss and accuracy curves, confusion, IoU/F1 bars, PR curves, robustness, efficiency, sample predictions, overlap examples). Embed those PNGs in the written report. Do not invent plots.
 
-After you run the report notebook, figures land in `notebooks/figures/`:
+## 7. Dashboard
 
-- `sample_tiles.png`
-- `drone_conditions.png`
-- `class_distribution.png`
-- `training_curves.png`
-- `confusion_run1.png` / `run2` / `run3`
-- `per_class_iou_f1.png`
-- `pr_curves.png`
-- `robustness.png`
-- `efficiency_table.png`
-- `sample_predictions.png`
+Static Next.js site under `dashboard/`. Screenshots: `docs/screenshots/` after the Playwright script. Live link: DOMAIN_TBD.
 
-Embed them in the report when present. Do not invent plots.
+## 8. Hardware
 
-## Hardware
+Ubuntu laptop, RTX 3050 4 GB, Python 3.12. Training times above are from pilot v1 logs on that class of machine.
 
-- Pilot target machine: Ubuntu laptop, RTX 3050 4 GB, Python 3.12
-- Pilot v1 training used CUDA (logs show `device=cuda` and peak VRAM above)
-
-## How to reproduce
-
-Always pass `--profile` (`pilot_v2` recommended). Default remains `pilot` for backward compatibility.
+## 9. Reproduce
 
 ```bash
 cd /home/aksingh/FieldLens
 source .venv/bin/activate
-cd training
 
-# 1) Plan + extract + stats
-python scripts/download_subset.py --profile pilot_v2 --mode plan
+# Setup check
+python - <<'PY'
+import torch
+print(torch.__version__, torch.cuda.is_available())
+PY
+
+cd training
 python scripts/download_subset.py --profile pilot_v2 --mode extract
 python scripts/compute_stats.py --profile pilot_v2
 
-# 2) Train
 python train.py --config configs/run1.yaml --profile pilot_v2
 python train.py --config configs/run2.yaml --profile pilot_v2
 python train.py --config configs/run3.yaml --profile pilot_v2
 
-# 3) Evaluate (include robustness)
 python evaluate.py --config configs/run1.yaml --profile pilot_v2 --checkpoint ../checkpoints/pilot_v2/run1/best.pt --robustness
 python evaluate.py --config configs/run2.yaml --profile pilot_v2 --checkpoint ../checkpoints/pilot_v2/run2/best.pt --robustness
 python evaluate.py --config configs/run3.yaml --profile pilot_v2 --checkpoint ../checkpoints/pilot_v2/run3/best.pt --robustness
 
-# 4) Export dashboard JSON + gallery overlays (images only if terms allow)
 python export.py --profile pilot_v2
 python export.py --profile pilot_v2 --allow-images
 
-# 5) Report figures
-cd ../notebooks
-FIELDLENS_PROFILE=pilot_v2 jupyter nbconvert --to notebook --execute report_figures.ipynb --output report_figures_executed.ipynb
+python scripts/make_report_figures.py --profile pilot_v2
+# or: cd ../notebooks && FIELDLENS_PROFILE=pilot_v2 jupyter nbconvert --to notebook --execute report_figures.ipynb --inplace
 
-# 6) Dashboard
 cd ../dashboard && npm install && npm run dev
+# screenshots (dev server running):
+# npm install -D playwright && npx playwright install chromium
+# node scripts/screenshot.mjs http://localhost:3000
 ```
 
-Outputs stay under `data/fieldlens/<profile>/`, `runs/<profile>/`, `checkpoints/<profile>/` so profiles never mix.
+## 10. Limitations and future work
 
-## Citations
+Class imbalance and rare classes hurt IoU. Motion blur and other drone conditions are tested with severity sweeps. Overlap pixels are rare in small pilots. Full scale training, Jetson class deployment notes, and a public domain (DOMAIN_TBD) remain open.
+
+## 11. Citations
 
 - Chiu et al., Agriculture-Vision, CVPR 2020.
 - Xie et al., SegFormer, NeurIPS 2021.
-- Li, X., Qiao, L., and Yang, C. (2025). AgriFusion: Multiscale RGB-NIR Fusion for Semantic Segmentation in Airborne Agricultural Imagery. AgriEngineering, 7(11), 388. https://doi.org/10.3390/agriengineering7110388 (fusion component only).
+- Li, X., Qiao, L., and Yang, C. (2025). AgriFusion: Multiscale RGB-NIR Fusion for Semantic Segmentation in Airborne Agricultural Imagery. AgriEngineering, 7(11), 388. https://doi.org/10.3390/agriengineering7110388
 
 ## License
 
-License unset. Dataset use is governed by Agriculture-Vision Workshop terms. Do not publish gallery tiles without permission.
+License unset. Dataset use follows Agriculture-Vision Workshop terms.

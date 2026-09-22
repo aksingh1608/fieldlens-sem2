@@ -26,7 +26,8 @@ No serverless functions are required. Environment variables are optional unless 
 
 - `next.config.ts` sets `output: "export"` and `images.unoptimized: true` for static hosting.
 - Client pages load `/data/results.json` and `/data/gallery/index.json` at runtime from the same origin.
-- After each training export, commit updated JSON and gallery assets, then redeploy.
+- After each training export, copy `dashboard/public/data/` onto the host or build machine (that folder is gitignored because gallery images are large). Then rebuild and redeploy.
+- Screenshots: with `npm run dev` running, install Playwright and run `node scripts/screenshot.mjs http://localhost:3000`. PNGs land in `docs/screenshots/`.
 
 Local verification:
 
