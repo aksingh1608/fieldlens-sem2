@@ -1,0 +1,46 @@
+# Shared data settings (not scale-specific). Subset sizes live in configs/profiles/.
+
+bucket: intelinair-data-releases
+prefix: agriculture-vision/cvpr_challenge_2021/supervised/
+archive_key: agriculture-vision/cvpr_challenge_2021/supervised/Agriculture-Vision-2021.tar.gz
+archive_size_bytes: 21033702578
+
+data_root: data/fieldlens
+archive_path: data/raw/Agriculture-Vision-2021.tar.gz
+extracted_root: data/raw/Agriculture-Vision-2021
+subset_root: data/fieldlens/tiles
+split_csv: data/fieldlens/split.csv
+seed: 42
+
+# Agriculture-Vision 2021 supervised anomaly classes (source of truth for train + dashboard).
+# Order is fixed for multilabel channel index 0..7 and Run 1 singlelabel ids 1..8.
+classes:
+  - id: double_plant
+    label: Double plant
+    color_rgb: [220, 80, 60]
+  - id: drydown
+    label: Drydown
+    color_rgb: [180, 140, 40]
+  - id: endrow
+    label: Endrow
+    color_rgb: [80, 160, 200]
+  - id: nutrient_deficiency
+    label: Nutrient deficiency
+    color_rgb: [60, 180, 90]
+  - id: planter_skip
+    label: Planter skip
+    color_rgb: [160, 80, 180]
+  - id: water
+    label: Water
+    color_rgb: [40, 90, 200]
+  - id: waterway
+    label: Waterway
+    color_rgb: [30, 160, 180]
+  - id: weed_cluster
+    label: Weed cluster
+    color_rgb: [200, 60, 140]
+
+background:
+  id: background
+  label: Background
+  color_rgb: [40, 40, 40]

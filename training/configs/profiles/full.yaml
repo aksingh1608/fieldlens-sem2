@@ -1,0 +1,24 @@
+# Full-scale profile.
+# WARNING: placeholder values only. Untested. Do not run at full scale until AK approves
+# and a machine with enough VRAM/disk/time is available.
+
+profile: full
+
+# Official Agriculture-Vision 2021 supervised split sizes (entire official split)
+n_train: 56944
+n_val: 18334
+n_test: 19708
+strict_tile_cap: false
+
+# PLACEHOLDER: larger encoder not validated in this repo yet
+encoder: PLACEHOLDER_LARGER_ENCODER_UNTESTED
+epochs: 100
+batch_size: 8
+accum_steps: 2
+encoder_lr: 6.0e-5
+other_lr: 6.0e-4
+weight_decay: 0.01
+warmup_epochs: 5
+num_workers: 8
+pin_memory: true
+amp: true

@@ -1,0 +1,28 @@
+# Larger FieldLens subset (original brief targets). Use only if you have time/disk.
+# Default pilot uses configs/data.yaml (small).
+
+bucket: intelinair-data-releases
+prefix: agriculture-vision/cvpr_challenge_2021/supervised/
+archive_key: agriculture-vision/cvpr_challenge_2021/supervised/Agriculture-Vision-2021.tar.gz
+archive_size_bytes: 21033702578
+
+data_root: data/fieldlens
+archive_path: data/raw/Agriculture-Vision-2021.tar.gz
+extracted_root: data/raw/Agriculture-Vision-2021
+subset_root: data/fieldlens/tiles
+split_csv: data/fieldlens/split.csv
+
+n_train: 3000
+n_val: 800
+n_test: 1500
+seed: 42
+
+classes:
+  - double_plant
+  - drydown
+  - endrow
+  - nutrient_deficiency
+  - planter_skip
+  - water
+  - waterway
+  - weed_cluster

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="FieldLens">
+  <rect width="32" height="32" rx="4" fill="#0d9488"/>
+  <path fill="#fff" d="M6 22 L16 8 L26 22 Z" opacity="0.95"/>
+  <circle cx="16" cy="19" r="3" fill="#134e4a"/>
+</svg>

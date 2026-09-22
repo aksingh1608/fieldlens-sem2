@@ -1,0 +1,54 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.so
+
+# Dataset and training artifacts (repo root only)
+/data/
+/checkpoints/
+/runs/
+/legacy/
+
+# Reference zip extract (do not confuse with training/)
+/fieldlens-main/
+
+# Exported dashboard data (tiles, results, gallery images)
+/dashboard/public/data/
+/dashboard/public/models/*.onnx
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+
+# Editor and assistant config (never commit)
+.idea/
+.vscode/
+.cursor/
+.claude/
+.cursorrules
+CLAUDE.md
+AGENTS.md
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs and local env
+*.log
+.env
+.env.local
+*.pt
+*.onnx
+
+# Jupyter
+.ipynb_checkpoints/

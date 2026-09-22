@@ -1,0 +1,32 @@
+run_name: run3
+seed: 42
+
+data:
+  subset_root: data/fieldlens/tiles
+  split_csv: data/fieldlens/split.csv
+  stats_json: data/fieldlens/stats.json
+  channels: rgb_nir
+  batch_size: 4
+  num_workers: 4
+  pin_memory: true
+
+model:
+  head: sigmoid
+  encoder: nvidia/mit-b0
+  num_classes: 8
+  fusion: true
+
+loss:
+  type: bce_dice
+  use_pos_weight: false
+
+optim:
+  encoder_lr: 6.0e-5
+  other_lr: 6.0e-4
+  weight_decay: 0.01
+  warmup_epochs: 1
+  epochs: 20
+  accum_steps: 1
+  amp: true
+
+threshold: 0.5

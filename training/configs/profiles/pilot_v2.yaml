@@ -1,0 +1,30 @@
+# Pilot v2 profile. Same tile budgets as pilot (v1), with per field caps so more
+# fields enter each split and class mixes stay closer across train / val / test.
+# Untested until AK runs extract under this profile.
+
+profile: pilot_v2
+
+n_train: 1500
+n_val: 400
+n_test: 800
+strict_tile_cap: true
+seed: 42
+
+# Cap tiles taken from any one field (after shuffle) before assigning whole fields
+# to splits. Keeps field separation between splits.
+max_tiles_per_field:
+  train: 10
+  val: 10
+  test: 5
+
+encoder: nvidia/mit-b0
+epochs: 10
+batch_size: 4
+accum_steps: 1
+encoder_lr: 6.0e-5
+other_lr: 6.0e-4
+weight_decay: 0.01
+warmup_epochs: 1
+num_workers: 4
+pin_memory: true
+amp: true

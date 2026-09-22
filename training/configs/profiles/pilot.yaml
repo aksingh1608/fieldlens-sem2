@@ -1,0 +1,25 @@
+# Pilot v1 profile (kept for comparison). Sized for an RTX 3050 with 4 GB VRAM.
+# Note: without max_tiles_per_field this used few fields (31/15/18), so class
+# mixes differed strongly across splits. Prefer pilot_v2 for new work.
+
+profile: pilot
+
+# Subset tile targets (whole-field sampling then strict cap)
+n_train: 1500
+n_val: 400
+n_test: 800
+strict_tile_cap: true
+seed: 42
+
+# Model / train
+encoder: nvidia/mit-b0
+epochs: 10
+batch_size: 4
+accum_steps: 1
+encoder_lr: 6.0e-5
+other_lr: 6.0e-4
+weight_decay: 0.01
+warmup_epochs: 1
+num_workers: 4
+pin_memory: true
+amp: true

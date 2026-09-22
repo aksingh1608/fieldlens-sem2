@@ -1,0 +1,35 @@
+# FieldLens training dependencies (unpinned).
+#
+# Versions are deliberately absent: pin them from the real environment after
+# install, do not invent them.
+#
+#   source .venv/bin/activate
+#   pip install -r requirements.txt
+#   pip freeze | grep -Ei '^(torch|torchvision|transformers|numpy|pillow|opencv-python-headless|scikit-learn|matplotlib|PyYAML|tqdm|boto3|tensorboard|onnx|onnxruntime|pytest)=='
+#
+# Paste that output below the marker, replacing the unpinned names.
+
+# --- core ---
+torch
+torchvision
+transformers
+numpy
+Pillow
+PyYAML
+tqdm
+boto3
+
+# --- data / metrics / plots ---
+opencv-python-headless   # fieldlens.transforms_drone
+scikit-learn             # tile-level PR curves in evaluate.py
+matplotlib               # confusion + robustness figures
+tensorboard              # torch.utils.tensorboard in train.py
+
+# --- export ---
+onnx                     # scripts/export_onnx.py
+onnxruntime              # ONNX vs PyTorch parity check
+
+# --- dev ---
+pytest
+
+# --- pinned (fill after install) ---
