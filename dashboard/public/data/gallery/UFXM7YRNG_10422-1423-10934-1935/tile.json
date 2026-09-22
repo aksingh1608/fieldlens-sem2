@@ -1,0 +1,19 @@
+{
+  "tile_id": "UFXM7YRNG_10422-1423-10934-1935",
+  "coverage_gt": {
+    "double_plant": 0.0,
+    "drydown": 0.0,
+    "endrow": 0.0,
+    "nutrient_deficiency": 0.28557183823074334,
+    "planter_skip": 0.0,
+    "water": 0.0,
+    "waterway": 0.0,
+    "weed_cluster": 0.0
+  },
+  "alerts_gt": [
+    {
+      "class": "nutrient_deficiency",
+      "coverage_pct": 28.56
+    }
+  ]
+}

@@ -21,10 +21,7 @@ build/
 # Reference zip extract (do not confuse with training/)
 /fieldlens-main/
 
-# Gallery tile image folders (AV redistribution risk + size).
-# Keep index.json stub in git so Explorer/Compare do not 404 on Vercel.
-/dashboard/public/data/gallery/*
-!/dashboard/public/data/gallery/index.json
+# Optional ONNX only (gallery tiles + figures are committed for the pilot dashboard)
 /dashboard/public/models/*.onnx
 
 # Node / Next.js

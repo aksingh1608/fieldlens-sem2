@@ -1,0 +1,19 @@
+{
+  "tile_id": "NJL8CTIWZ_2194-992-2706-1504",
+  "coverage_gt": {
+    "double_plant": 0.06102737922864288,
+    "drydown": 0.0,
+    "endrow": 0.0,
+    "nutrient_deficiency": 0.0,
+    "planter_skip": 0.0,
+    "water": 0.0,
+    "waterway": 0.0,
+    "weed_cluster": 0.0
+  },
+  "alerts_gt": [
+    {
+      "class": "double_plant",
+      "coverage_pct": 6.1
+    }
+  ]
+}

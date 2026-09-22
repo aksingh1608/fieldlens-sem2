@@ -1,0 +1,19 @@
+{
+  "tile_id": "BBJEUL3LR_2367-2361-2879-2873",
+  "coverage_gt": {
+    "double_plant": 0.0,
+    "drydown": 0.0,
+    "endrow": 0.0,
+    "nutrient_deficiency": 0.0,
+    "planter_skip": 0.0,
+    "water": 0.0,
+    "waterway": 0.03556135878463802,
+    "weed_cluster": 0.0
+  },
+  "alerts_gt": [
+    {
+      "class": "waterway",
+      "coverage_pct": 3.56
+    }
+  ]
+}

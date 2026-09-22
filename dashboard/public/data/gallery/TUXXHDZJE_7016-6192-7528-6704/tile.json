@@ -1,0 +1,19 @@
+{
+  "tile_id": "TUXXHDZJE_7016-6192-7528-6704",
+  "coverage_gt": {
+    "double_plant": 0.0,
+    "drydown": 0.0,
+    "endrow": 0.0,
+    "nutrient_deficiency": 0.0,
+    "planter_skip": 0.0,
+    "water": 0.19577789306640625,
+    "waterway": 0.0,
+    "weed_cluster": 0.0
+  },
+  "alerts_gt": [
+    {
+      "class": "water",
+      "coverage_pct": 19.58
+    }
+  ]
+}

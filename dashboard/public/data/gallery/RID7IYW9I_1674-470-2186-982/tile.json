@@ -1,0 +1,19 @@
+{
+  "tile_id": "RID7IYW9I_1674-470-2186-982",
+  "coverage_gt": {
+    "double_plant": 0.0,
+    "drydown": 0.0,
+    "endrow": 0.1696272095033425,
+    "nutrient_deficiency": 0.0,
+    "planter_skip": 0.0,
+    "water": 0.0,
+    "waterway": 0.0,
+    "weed_cluster": 0.0
+  },
+  "alerts_gt": [
+    {
+      "class": "endrow",
+      "coverage_pct": 16.96
+    }
+  ]
+}

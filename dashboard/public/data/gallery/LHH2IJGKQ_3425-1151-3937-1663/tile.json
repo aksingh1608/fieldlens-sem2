@@ -1,0 +1,19 @@
+{
+  "tile_id": "LHH2IJGKQ_3425-1151-3937-1663",
+  "coverage_gt": {
+    "double_plant": 0.0,
+    "drydown": 0.0,
+    "endrow": 0.0,
+    "nutrient_deficiency": 0.0,
+    "planter_skip": 0.010890960693359375,
+    "water": 0.0,
+    "waterway": 0.0,
+    "weed_cluster": 0.0
+  },
+  "alerts_gt": [
+    {
+      "class": "planter_skip",
+      "coverage_pct": 1.09
+    }
+  ]
+}

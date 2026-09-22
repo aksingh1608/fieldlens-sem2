@@ -1,0 +1,19 @@
+{
+  "tile_id": "E4A1F4V7B_10012-9777-10524-10289",
+  "coverage_gt": {
+    "double_plant": 0.0,
+    "drydown": 0.5762672424316406,
+    "endrow": 0.0,
+    "nutrient_deficiency": 0.0,
+    "planter_skip": 0.0,
+    "water": 0.0,
+    "waterway": 0.0,
+    "weed_cluster": 0.0
+  },
+  "alerts_gt": [
+    {
+      "class": "drydown",
+      "coverage_pct": 57.63
+    }
+  ]
+}

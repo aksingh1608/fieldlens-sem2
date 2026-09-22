@@ -1,0 +1,19 @@
+{
+  "tile_id": "TD2VA2KJW_4670-6916-5182-7428",
+  "coverage_gt": {
+    "double_plant": 0.0,
+    "drydown": 0.0,
+    "endrow": 0.0,
+    "nutrient_deficiency": 0.07911300659179688,
+    "planter_skip": 0.0,
+    "water": 0.0,
+    "waterway": 0.0,
+    "weed_cluster": 0.0
+  },
+  "alerts_gt": [
+    {
+      "class": "nutrient_deficiency",
+      "coverage_pct": 7.91
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "tile_id": "4VIHRPT3I_1612-807-2124-1319",
+  "coverage_gt": {
+    "double_plant": 0.0,
+    "drydown": 0.0,
+    "endrow": 0.0,
+    "nutrient_deficiency": 0.11171340942382812,
+    "planter_skip": 0.0,
+    "water": 0.0,
+    "waterway": 0.0,
+    "weed_cluster": 0.0
+  },
+  "alerts_gt": [
+    {
+      "class": "nutrient_deficiency",
+      "coverage_pct": 11.17
+    }
+  ]
+}

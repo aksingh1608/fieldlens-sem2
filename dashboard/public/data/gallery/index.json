@@ -1,4 +1,845 @@
 {
-  "tiles": [],
-  "note": "Gallery tile images are not shipped to public deploy (Agriculture-Vision terms). Local export with --allow-images fills this index."
+  "tiles": [
+    {
+      "id": "2ENRJHH6U_2438-723-2950-1235",
+      "label": "2ENRJHH6U_2438-723-2950-1235",
+      "path": "gallery/2ENRJHH6U_2438-723-2950-1235",
+      "rgb_url": "/data/gallery/2ENRJHH6U_2438-723-2950-1235/rgb.webp",
+      "nir_url": "/data/gallery/2ENRJHH6U_2438-723-2950-1235/nir.webp",
+      "gt_url": "/data/gallery/2ENRJHH6U_2438-723-2950-1235/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/2ENRJHH6U_2438-723-2950-1235/pred_run1.webp",
+        "run2": "/data/gallery/2ENRJHH6U_2438-723-2950-1235/pred_run2.webp",
+        "run3": "/data/gallery/2ENRJHH6U_2438-723-2950-1235/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "4VIHRPT3I_1612-807-2124-1319",
+      "label": "4VIHRPT3I_1612-807-2124-1319",
+      "path": "gallery/4VIHRPT3I_1612-807-2124-1319",
+      "rgb_url": "/data/gallery/4VIHRPT3I_1612-807-2124-1319/rgb.webp",
+      "nir_url": "/data/gallery/4VIHRPT3I_1612-807-2124-1319/nir.webp",
+      "gt_url": "/data/gallery/4VIHRPT3I_1612-807-2124-1319/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/4VIHRPT3I_1612-807-2124-1319/pred_run1.webp",
+        "run2": "/data/gallery/4VIHRPT3I_1612-807-2124-1319/pred_run2.webp",
+        "run3": "/data/gallery/4VIHRPT3I_1612-807-2124-1319/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "4VIHRPT3I_2225-1147-2737-1659",
+      "label": "4VIHRPT3I_2225-1147-2737-1659",
+      "path": "gallery/4VIHRPT3I_2225-1147-2737-1659",
+      "rgb_url": "/data/gallery/4VIHRPT3I_2225-1147-2737-1659/rgb.webp",
+      "nir_url": "/data/gallery/4VIHRPT3I_2225-1147-2737-1659/nir.webp",
+      "gt_url": "/data/gallery/4VIHRPT3I_2225-1147-2737-1659/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/4VIHRPT3I_2225-1147-2737-1659/pred_run1.webp",
+        "run2": "/data/gallery/4VIHRPT3I_2225-1147-2737-1659/pred_run2.webp",
+        "run3": "/data/gallery/4VIHRPT3I_2225-1147-2737-1659/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "BBJEUL3LR_1498-2399-2010-2911",
+      "label": "BBJEUL3LR_1498-2399-2010-2911",
+      "path": "gallery/BBJEUL3LR_1498-2399-2010-2911",
+      "rgb_url": "/data/gallery/BBJEUL3LR_1498-2399-2010-2911/rgb.webp",
+      "nir_url": "/data/gallery/BBJEUL3LR_1498-2399-2010-2911/nir.webp",
+      "gt_url": "/data/gallery/BBJEUL3LR_1498-2399-2010-2911/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/BBJEUL3LR_1498-2399-2010-2911/pred_run1.webp",
+        "run2": "/data/gallery/BBJEUL3LR_1498-2399-2010-2911/pred_run2.webp",
+        "run3": "/data/gallery/BBJEUL3LR_1498-2399-2010-2911/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "BBJEUL3LR_1498-2911-2010-3423",
+      "label": "BBJEUL3LR_1498-2911-2010-3423",
+      "path": "gallery/BBJEUL3LR_1498-2911-2010-3423",
+      "rgb_url": "/data/gallery/BBJEUL3LR_1498-2911-2010-3423/rgb.webp",
+      "nir_url": "/data/gallery/BBJEUL3LR_1498-2911-2010-3423/nir.webp",
+      "gt_url": "/data/gallery/BBJEUL3LR_1498-2911-2010-3423/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/BBJEUL3LR_1498-2911-2010-3423/pred_run1.webp",
+        "run2": "/data/gallery/BBJEUL3LR_1498-2911-2010-3423/pred_run2.webp",
+        "run3": "/data/gallery/BBJEUL3LR_1498-2911-2010-3423/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "BBJEUL3LR_2367-2361-2879-2873",
+      "label": "BBJEUL3LR_2367-2361-2879-2873",
+      "path": "gallery/BBJEUL3LR_2367-2361-2879-2873",
+      "rgb_url": "/data/gallery/BBJEUL3LR_2367-2361-2879-2873/rgb.webp",
+      "nir_url": "/data/gallery/BBJEUL3LR_2367-2361-2879-2873/nir.webp",
+      "gt_url": "/data/gallery/BBJEUL3LR_2367-2361-2879-2873/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/BBJEUL3LR_2367-2361-2879-2873/pred_run1.webp",
+        "run2": "/data/gallery/BBJEUL3LR_2367-2361-2879-2873/pred_run2.webp",
+        "run3": "/data/gallery/BBJEUL3LR_2367-2361-2879-2873/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "BBJEUL3LR_3234-2718-3746-3230",
+      "label": "BBJEUL3LR_3234-2718-3746-3230",
+      "path": "gallery/BBJEUL3LR_3234-2718-3746-3230",
+      "rgb_url": "/data/gallery/BBJEUL3LR_3234-2718-3746-3230/rgb.webp",
+      "nir_url": "/data/gallery/BBJEUL3LR_3234-2718-3746-3230/nir.webp",
+      "gt_url": "/data/gallery/BBJEUL3LR_3234-2718-3746-3230/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/BBJEUL3LR_3234-2718-3746-3230/pred_run1.webp",
+        "run2": "/data/gallery/BBJEUL3LR_3234-2718-3746-3230/pred_run2.webp",
+        "run3": "/data/gallery/BBJEUL3LR_3234-2718-3746-3230/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "E4A1F4V7B_10012-2609-10524-3121",
+      "label": "E4A1F4V7B_10012-2609-10524-3121",
+      "path": "gallery/E4A1F4V7B_10012-2609-10524-3121",
+      "rgb_url": "/data/gallery/E4A1F4V7B_10012-2609-10524-3121/rgb.webp",
+      "nir_url": "/data/gallery/E4A1F4V7B_10012-2609-10524-3121/nir.webp",
+      "gt_url": "/data/gallery/E4A1F4V7B_10012-2609-10524-3121/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/E4A1F4V7B_10012-2609-10524-3121/pred_run1.webp",
+        "run2": "/data/gallery/E4A1F4V7B_10012-2609-10524-3121/pred_run2.webp",
+        "run3": "/data/gallery/E4A1F4V7B_10012-2609-10524-3121/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "E4A1F4V7B_10012-9777-10524-10289",
+      "label": "E4A1F4V7B_10012-9777-10524-10289",
+      "path": "gallery/E4A1F4V7B_10012-9777-10524-10289",
+      "rgb_url": "/data/gallery/E4A1F4V7B_10012-9777-10524-10289/rgb.webp",
+      "nir_url": "/data/gallery/E4A1F4V7B_10012-9777-10524-10289/nir.webp",
+      "gt_url": "/data/gallery/E4A1F4V7B_10012-9777-10524-10289/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/E4A1F4V7B_10012-9777-10524-10289/pred_run1.webp",
+        "run2": "/data/gallery/E4A1F4V7B_10012-9777-10524-10289/pred_run2.webp",
+        "run3": "/data/gallery/E4A1F4V7B_10012-9777-10524-10289/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "E4A1F4V7B_10473-5042-10985-5554",
+      "label": "E4A1F4V7B_10473-5042-10985-5554",
+      "path": "gallery/E4A1F4V7B_10473-5042-10985-5554",
+      "rgb_url": "/data/gallery/E4A1F4V7B_10473-5042-10985-5554/rgb.webp",
+      "nir_url": "/data/gallery/E4A1F4V7B_10473-5042-10985-5554/nir.webp",
+      "gt_url": "/data/gallery/E4A1F4V7B_10473-5042-10985-5554/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/E4A1F4V7B_10473-5042-10985-5554/pred_run1.webp",
+        "run2": "/data/gallery/E4A1F4V7B_10473-5042-10985-5554/pred_run2.webp",
+        "run3": "/data/gallery/E4A1F4V7B_10473-5042-10985-5554/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "E4A1F4V7B_10473-6066-10985-6578",
+      "label": "E4A1F4V7B_10473-6066-10985-6578",
+      "path": "gallery/E4A1F4V7B_10473-6066-10985-6578",
+      "rgb_url": "/data/gallery/E4A1F4V7B_10473-6066-10985-6578/rgb.webp",
+      "nir_url": "/data/gallery/E4A1F4V7B_10473-6066-10985-6578/nir.webp",
+      "gt_url": "/data/gallery/E4A1F4V7B_10473-6066-10985-6578/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/E4A1F4V7B_10473-6066-10985-6578/pred_run1.webp",
+        "run2": "/data/gallery/E4A1F4V7B_10473-6066-10985-6578/pred_run2.webp",
+        "run3": "/data/gallery/E4A1F4V7B_10473-6066-10985-6578/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "E4A1F4V7B_10473-9650-10985-10162",
+      "label": "E4A1F4V7B_10473-9650-10985-10162",
+      "path": "gallery/E4A1F4V7B_10473-9650-10985-10162",
+      "rgb_url": "/data/gallery/E4A1F4V7B_10473-9650-10985-10162/rgb.webp",
+      "nir_url": "/data/gallery/E4A1F4V7B_10473-9650-10985-10162/nir.webp",
+      "gt_url": "/data/gallery/E4A1F4V7B_10473-9650-10985-10162/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/E4A1F4V7B_10473-9650-10985-10162/pred_run1.webp",
+        "run2": "/data/gallery/E4A1F4V7B_10473-9650-10985-10162/pred_run2.webp",
+        "run3": "/data/gallery/E4A1F4V7B_10473-9650-10985-10162/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "E4A1F4V7B_7293-2276-7805-2788",
+      "label": "E4A1F4V7B_7293-2276-7805-2788",
+      "path": "gallery/E4A1F4V7B_7293-2276-7805-2788",
+      "rgb_url": "/data/gallery/E4A1F4V7B_7293-2276-7805-2788/rgb.webp",
+      "nir_url": "/data/gallery/E4A1F4V7B_7293-2276-7805-2788/nir.webp",
+      "gt_url": "/data/gallery/E4A1F4V7B_7293-2276-7805-2788/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/E4A1F4V7B_7293-2276-7805-2788/pred_run1.webp",
+        "run2": "/data/gallery/E4A1F4V7B_7293-2276-7805-2788/pred_run2.webp",
+        "run3": "/data/gallery/E4A1F4V7B_7293-2276-7805-2788/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "E4A1F4V7B_7435-1517-7947-2029",
+      "label": "E4A1F4V7B_7435-1517-7947-2029",
+      "path": "gallery/E4A1F4V7B_7435-1517-7947-2029",
+      "rgb_url": "/data/gallery/E4A1F4V7B_7435-1517-7947-2029/rgb.webp",
+      "nir_url": "/data/gallery/E4A1F4V7B_7435-1517-7947-2029/nir.webp",
+      "gt_url": "/data/gallery/E4A1F4V7B_7435-1517-7947-2029/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/E4A1F4V7B_7435-1517-7947-2029/pred_run1.webp",
+        "run2": "/data/gallery/E4A1F4V7B_7435-1517-7947-2029/pred_run2.webp",
+        "run3": "/data/gallery/E4A1F4V7B_7435-1517-7947-2029/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "E4A1F4V7B_7614-763-8126-1275",
+      "label": "E4A1F4V7B_7614-763-8126-1275",
+      "path": "gallery/E4A1F4V7B_7614-763-8126-1275",
+      "rgb_url": "/data/gallery/E4A1F4V7B_7614-763-8126-1275/rgb.webp",
+      "nir_url": "/data/gallery/E4A1F4V7B_7614-763-8126-1275/nir.webp",
+      "gt_url": "/data/gallery/E4A1F4V7B_7614-763-8126-1275/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/E4A1F4V7B_7614-763-8126-1275/pred_run1.webp",
+        "run2": "/data/gallery/E4A1F4V7B_7614-763-8126-1275/pred_run2.webp",
+        "run3": "/data/gallery/E4A1F4V7B_7614-763-8126-1275/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "E4A1F4V7B_7805-6372-8317-6884",
+      "label": "E4A1F4V7B_7805-6372-8317-6884",
+      "path": "gallery/E4A1F4V7B_7805-6372-8317-6884",
+      "rgb_url": "/data/gallery/E4A1F4V7B_7805-6372-8317-6884/rgb.webp",
+      "nir_url": "/data/gallery/E4A1F4V7B_7805-6372-8317-6884/nir.webp",
+      "gt_url": "/data/gallery/E4A1F4V7B_7805-6372-8317-6884/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/E4A1F4V7B_7805-6372-8317-6884/pred_run1.webp",
+        "run2": "/data/gallery/E4A1F4V7B_7805-6372-8317-6884/pred_run2.webp",
+        "run3": "/data/gallery/E4A1F4V7B_7805-6372-8317-6884/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "E4A1F4V7B_9041-3165-9553-3677",
+      "label": "E4A1F4V7B_9041-3165-9553-3677",
+      "path": "gallery/E4A1F4V7B_9041-3165-9553-3677",
+      "rgb_url": "/data/gallery/E4A1F4V7B_9041-3165-9553-3677/rgb.webp",
+      "nir_url": "/data/gallery/E4A1F4V7B_9041-3165-9553-3677/nir.webp",
+      "gt_url": "/data/gallery/E4A1F4V7B_9041-3165-9553-3677/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/E4A1F4V7B_9041-3165-9553-3677/pred_run1.webp",
+        "run2": "/data/gallery/E4A1F4V7B_9041-3165-9553-3677/pred_run2.webp",
+        "run3": "/data/gallery/E4A1F4V7B_9041-3165-9553-3677/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "E4A1F4V7B_9500-10801-10012-11313",
+      "label": "E4A1F4V7B_9500-10801-10012-11313",
+      "path": "gallery/E4A1F4V7B_9500-10801-10012-11313",
+      "rgb_url": "/data/gallery/E4A1F4V7B_9500-10801-10012-11313/rgb.webp",
+      "nir_url": "/data/gallery/E4A1F4V7B_9500-10801-10012-11313/nir.webp",
+      "gt_url": "/data/gallery/E4A1F4V7B_9500-10801-10012-11313/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/E4A1F4V7B_9500-10801-10012-11313/pred_run1.webp",
+        "run2": "/data/gallery/E4A1F4V7B_9500-10801-10012-11313/pred_run2.webp",
+        "run3": "/data/gallery/E4A1F4V7B_9500-10801-10012-11313/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "E4A1F4V7B_9500-7217-10012-7729",
+      "label": "E4A1F4V7B_9500-7217-10012-7729",
+      "path": "gallery/E4A1F4V7B_9500-7217-10012-7729",
+      "rgb_url": "/data/gallery/E4A1F4V7B_9500-7217-10012-7729/rgb.webp",
+      "nir_url": "/data/gallery/E4A1F4V7B_9500-7217-10012-7729/nir.webp",
+      "gt_url": "/data/gallery/E4A1F4V7B_9500-7217-10012-7729/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/E4A1F4V7B_9500-7217-10012-7729/pred_run1.webp",
+        "run2": "/data/gallery/E4A1F4V7B_9500-7217-10012-7729/pred_run2.webp",
+        "run3": "/data/gallery/E4A1F4V7B_9500-7217-10012-7729/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "E4A1F4V7B_9500-8753-10012-9265",
+      "label": "E4A1F4V7B_9500-8753-10012-9265",
+      "path": "gallery/E4A1F4V7B_9500-8753-10012-9265",
+      "rgb_url": "/data/gallery/E4A1F4V7B_9500-8753-10012-9265/rgb.webp",
+      "nir_url": "/data/gallery/E4A1F4V7B_9500-8753-10012-9265/nir.webp",
+      "gt_url": "/data/gallery/E4A1F4V7B_9500-8753-10012-9265/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/E4A1F4V7B_9500-8753-10012-9265/pred_run1.webp",
+        "run2": "/data/gallery/E4A1F4V7B_9500-8753-10012-9265/pred_run2.webp",
+        "run3": "/data/gallery/E4A1F4V7B_9500-8753-10012-9265/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "E4A1F4V7B_9526-4297-10038-4809",
+      "label": "E4A1F4V7B_9526-4297-10038-4809",
+      "path": "gallery/E4A1F4V7B_9526-4297-10038-4809",
+      "rgb_url": "/data/gallery/E4A1F4V7B_9526-4297-10038-4809/rgb.webp",
+      "nir_url": "/data/gallery/E4A1F4V7B_9526-4297-10038-4809/nir.webp",
+      "gt_url": "/data/gallery/E4A1F4V7B_9526-4297-10038-4809/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/E4A1F4V7B_9526-4297-10038-4809/pred_run1.webp",
+        "run2": "/data/gallery/E4A1F4V7B_9526-4297-10038-4809/pred_run2.webp",
+        "run3": "/data/gallery/E4A1F4V7B_9526-4297-10038-4809/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "K9KPTX44Z_2668-1912-3180-2424",
+      "label": "K9KPTX44Z_2668-1912-3180-2424",
+      "path": "gallery/K9KPTX44Z_2668-1912-3180-2424",
+      "rgb_url": "/data/gallery/K9KPTX44Z_2668-1912-3180-2424/rgb.webp",
+      "nir_url": "/data/gallery/K9KPTX44Z_2668-1912-3180-2424/nir.webp",
+      "gt_url": "/data/gallery/K9KPTX44Z_2668-1912-3180-2424/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/K9KPTX44Z_2668-1912-3180-2424/pred_run1.webp",
+        "run2": "/data/gallery/K9KPTX44Z_2668-1912-3180-2424/pred_run2.webp",
+        "run3": "/data/gallery/K9KPTX44Z_2668-1912-3180-2424/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "LHH2IJGKQ_3425-1151-3937-1663",
+      "label": "LHH2IJGKQ_3425-1151-3937-1663",
+      "path": "gallery/LHH2IJGKQ_3425-1151-3937-1663",
+      "rgb_url": "/data/gallery/LHH2IJGKQ_3425-1151-3937-1663/rgb.webp",
+      "nir_url": "/data/gallery/LHH2IJGKQ_3425-1151-3937-1663/nir.webp",
+      "gt_url": "/data/gallery/LHH2IJGKQ_3425-1151-3937-1663/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/LHH2IJGKQ_3425-1151-3937-1663/pred_run1.webp",
+        "run2": "/data/gallery/LHH2IJGKQ_3425-1151-3937-1663/pred_run2.webp",
+        "run3": "/data/gallery/LHH2IJGKQ_3425-1151-3937-1663/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "NJL8CTIWZ_1302-1648-1814-2160",
+      "label": "NJL8CTIWZ_1302-1648-1814-2160",
+      "path": "gallery/NJL8CTIWZ_1302-1648-1814-2160",
+      "rgb_url": "/data/gallery/NJL8CTIWZ_1302-1648-1814-2160/rgb.webp",
+      "nir_url": "/data/gallery/NJL8CTIWZ_1302-1648-1814-2160/nir.webp",
+      "gt_url": "/data/gallery/NJL8CTIWZ_1302-1648-1814-2160/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/NJL8CTIWZ_1302-1648-1814-2160/pred_run1.webp",
+        "run2": "/data/gallery/NJL8CTIWZ_1302-1648-1814-2160/pred_run2.webp",
+        "run3": "/data/gallery/NJL8CTIWZ_1302-1648-1814-2160/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "NJL8CTIWZ_1946-1144-2458-1656",
+      "label": "NJL8CTIWZ_1946-1144-2458-1656",
+      "path": "gallery/NJL8CTIWZ_1946-1144-2458-1656",
+      "rgb_url": "/data/gallery/NJL8CTIWZ_1946-1144-2458-1656/rgb.webp",
+      "nir_url": "/data/gallery/NJL8CTIWZ_1946-1144-2458-1656/nir.webp",
+      "gt_url": "/data/gallery/NJL8CTIWZ_1946-1144-2458-1656/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/NJL8CTIWZ_1946-1144-2458-1656/pred_run1.webp",
+        "run2": "/data/gallery/NJL8CTIWZ_1946-1144-2458-1656/pred_run2.webp",
+        "run3": "/data/gallery/NJL8CTIWZ_1946-1144-2458-1656/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "NJL8CTIWZ_2194-992-2706-1504",
+      "label": "NJL8CTIWZ_2194-992-2706-1504",
+      "path": "gallery/NJL8CTIWZ_2194-992-2706-1504",
+      "rgb_url": "/data/gallery/NJL8CTIWZ_2194-992-2706-1504/rgb.webp",
+      "nir_url": "/data/gallery/NJL8CTIWZ_2194-992-2706-1504/nir.webp",
+      "gt_url": "/data/gallery/NJL8CTIWZ_2194-992-2706-1504/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/NJL8CTIWZ_2194-992-2706-1504/pred_run1.webp",
+        "run2": "/data/gallery/NJL8CTIWZ_2194-992-2706-1504/pred_run2.webp",
+        "run3": "/data/gallery/NJL8CTIWZ_2194-992-2706-1504/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "RID7IYW9I_1193-427-1705-939",
+      "label": "RID7IYW9I_1193-427-1705-939",
+      "path": "gallery/RID7IYW9I_1193-427-1705-939",
+      "rgb_url": "/data/gallery/RID7IYW9I_1193-427-1705-939/rgb.webp",
+      "nir_url": "/data/gallery/RID7IYW9I_1193-427-1705-939/nir.webp",
+      "gt_url": "/data/gallery/RID7IYW9I_1193-427-1705-939/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/RID7IYW9I_1193-427-1705-939/pred_run1.webp",
+        "run2": "/data/gallery/RID7IYW9I_1193-427-1705-939/pred_run2.webp",
+        "run3": "/data/gallery/RID7IYW9I_1193-427-1705-939/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "RID7IYW9I_1459-3317-1971-3829",
+      "label": "RID7IYW9I_1459-3317-1971-3829",
+      "path": "gallery/RID7IYW9I_1459-3317-1971-3829",
+      "rgb_url": "/data/gallery/RID7IYW9I_1459-3317-1971-3829/rgb.webp",
+      "nir_url": "/data/gallery/RID7IYW9I_1459-3317-1971-3829/nir.webp",
+      "gt_url": "/data/gallery/RID7IYW9I_1459-3317-1971-3829/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/RID7IYW9I_1459-3317-1971-3829/pred_run1.webp",
+        "run2": "/data/gallery/RID7IYW9I_1459-3317-1971-3829/pred_run2.webp",
+        "run3": "/data/gallery/RID7IYW9I_1459-3317-1971-3829/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "RID7IYW9I_1459-3829-1971-4341",
+      "label": "RID7IYW9I_1459-3829-1971-4341",
+      "path": "gallery/RID7IYW9I_1459-3829-1971-4341",
+      "rgb_url": "/data/gallery/RID7IYW9I_1459-3829-1971-4341/rgb.webp",
+      "nir_url": "/data/gallery/RID7IYW9I_1459-3829-1971-4341/nir.webp",
+      "gt_url": "/data/gallery/RID7IYW9I_1459-3829-1971-4341/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/RID7IYW9I_1459-3829-1971-4341/pred_run1.webp",
+        "run2": "/data/gallery/RID7IYW9I_1459-3829-1971-4341/pred_run2.webp",
+        "run3": "/data/gallery/RID7IYW9I_1459-3829-1971-4341/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "RID7IYW9I_1674-470-2186-982",
+      "label": "RID7IYW9I_1674-470-2186-982",
+      "path": "gallery/RID7IYW9I_1674-470-2186-982",
+      "rgb_url": "/data/gallery/RID7IYW9I_1674-470-2186-982/rgb.webp",
+      "nir_url": "/data/gallery/RID7IYW9I_1674-470-2186-982/nir.webp",
+      "gt_url": "/data/gallery/RID7IYW9I_1674-470-2186-982/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/RID7IYW9I_1674-470-2186-982/pred_run1.webp",
+        "run2": "/data/gallery/RID7IYW9I_1674-470-2186-982/pred_run2.webp",
+        "run3": "/data/gallery/RID7IYW9I_1674-470-2186-982/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "RID7IYW9I_2406-3278-2918-3790",
+      "label": "RID7IYW9I_2406-3278-2918-3790",
+      "path": "gallery/RID7IYW9I_2406-3278-2918-3790",
+      "rgb_url": "/data/gallery/RID7IYW9I_2406-3278-2918-3790/rgb.webp",
+      "nir_url": "/data/gallery/RID7IYW9I_2406-3278-2918-3790/nir.webp",
+      "gt_url": "/data/gallery/RID7IYW9I_2406-3278-2918-3790/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/RID7IYW9I_2406-3278-2918-3790/pred_run1.webp",
+        "run2": "/data/gallery/RID7IYW9I_2406-3278-2918-3790/pred_run2.webp",
+        "run3": "/data/gallery/RID7IYW9I_2406-3278-2918-3790/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "TD2VA2KJW_4670-6916-5182-7428",
+      "label": "TD2VA2KJW_4670-6916-5182-7428",
+      "path": "gallery/TD2VA2KJW_4670-6916-5182-7428",
+      "rgb_url": "/data/gallery/TD2VA2KJW_4670-6916-5182-7428/rgb.webp",
+      "nir_url": "/data/gallery/TD2VA2KJW_4670-6916-5182-7428/nir.webp",
+      "gt_url": "/data/gallery/TD2VA2KJW_4670-6916-5182-7428/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/TD2VA2KJW_4670-6916-5182-7428/pred_run1.webp",
+        "run2": "/data/gallery/TD2VA2KJW_4670-6916-5182-7428/pred_run2.webp",
+        "run3": "/data/gallery/TD2VA2KJW_4670-6916-5182-7428/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "TD2VA2KJW_5540-7852-6052-8364",
+      "label": "TD2VA2KJW_5540-7852-6052-8364",
+      "path": "gallery/TD2VA2KJW_5540-7852-6052-8364",
+      "rgb_url": "/data/gallery/TD2VA2KJW_5540-7852-6052-8364/rgb.webp",
+      "nir_url": "/data/gallery/TD2VA2KJW_5540-7852-6052-8364/nir.webp",
+      "gt_url": "/data/gallery/TD2VA2KJW_5540-7852-6052-8364/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/TD2VA2KJW_5540-7852-6052-8364/pred_run1.webp",
+        "run2": "/data/gallery/TD2VA2KJW_5540-7852-6052-8364/pred_run2.webp",
+        "run3": "/data/gallery/TD2VA2KJW_5540-7852-6052-8364/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "TD2VA2KJW_7742-5892-8254-6404",
+      "label": "TD2VA2KJW_7742-5892-8254-6404",
+      "path": "gallery/TD2VA2KJW_7742-5892-8254-6404",
+      "rgb_url": "/data/gallery/TD2VA2KJW_7742-5892-8254-6404/rgb.webp",
+      "nir_url": "/data/gallery/TD2VA2KJW_7742-5892-8254-6404/nir.webp",
+      "gt_url": "/data/gallery/TD2VA2KJW_7742-5892-8254-6404/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/TD2VA2KJW_7742-5892-8254-6404/pred_run1.webp",
+        "run2": "/data/gallery/TD2VA2KJW_7742-5892-8254-6404/pred_run2.webp",
+        "run3": "/data/gallery/TD2VA2KJW_7742-5892-8254-6404/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "TUXXHDZJE_10136-1733-10648-2245",
+      "label": "TUXXHDZJE_10136-1733-10648-2245",
+      "path": "gallery/TUXXHDZJE_10136-1733-10648-2245",
+      "rgb_url": "/data/gallery/TUXXHDZJE_10136-1733-10648-2245/rgb.webp",
+      "nir_url": "/data/gallery/TUXXHDZJE_10136-1733-10648-2245/nir.webp",
+      "gt_url": "/data/gallery/TUXXHDZJE_10136-1733-10648-2245/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/TUXXHDZJE_10136-1733-10648-2245/pred_run1.webp",
+        "run2": "/data/gallery/TUXXHDZJE_10136-1733-10648-2245/pred_run2.webp",
+        "run3": "/data/gallery/TUXXHDZJE_10136-1733-10648-2245/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "TUXXHDZJE_13147-2944-13659-3456",
+      "label": "TUXXHDZJE_13147-2944-13659-3456",
+      "path": "gallery/TUXXHDZJE_13147-2944-13659-3456",
+      "rgb_url": "/data/gallery/TUXXHDZJE_13147-2944-13659-3456/rgb.webp",
+      "nir_url": "/data/gallery/TUXXHDZJE_13147-2944-13659-3456/nir.webp",
+      "gt_url": "/data/gallery/TUXXHDZJE_13147-2944-13659-3456/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/TUXXHDZJE_13147-2944-13659-3456/pred_run1.webp",
+        "run2": "/data/gallery/TUXXHDZJE_13147-2944-13659-3456/pred_run2.webp",
+        "run3": "/data/gallery/TUXXHDZJE_13147-2944-13659-3456/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "TUXXHDZJE_3215-4124-3727-4636",
+      "label": "TUXXHDZJE_3215-4124-3727-4636",
+      "path": "gallery/TUXXHDZJE_3215-4124-3727-4636",
+      "rgb_url": "/data/gallery/TUXXHDZJE_3215-4124-3727-4636/rgb.webp",
+      "nir_url": "/data/gallery/TUXXHDZJE_3215-4124-3727-4636/nir.webp",
+      "gt_url": "/data/gallery/TUXXHDZJE_3215-4124-3727-4636/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/TUXXHDZJE_3215-4124-3727-4636/pred_run1.webp",
+        "run2": "/data/gallery/TUXXHDZJE_3215-4124-3727-4636/pred_run2.webp",
+        "run3": "/data/gallery/TUXXHDZJE_3215-4124-3727-4636/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "TUXXHDZJE_7016-6192-7528-6704",
+      "label": "TUXXHDZJE_7016-6192-7528-6704",
+      "path": "gallery/TUXXHDZJE_7016-6192-7528-6704",
+      "rgb_url": "/data/gallery/TUXXHDZJE_7016-6192-7528-6704/rgb.webp",
+      "nir_url": "/data/gallery/TUXXHDZJE_7016-6192-7528-6704/nir.webp",
+      "gt_url": "/data/gallery/TUXXHDZJE_7016-6192-7528-6704/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/TUXXHDZJE_7016-6192-7528-6704/pred_run1.webp",
+        "run2": "/data/gallery/TUXXHDZJE_7016-6192-7528-6704/pred_run2.webp",
+        "run3": "/data/gallery/TUXXHDZJE_7016-6192-7528-6704/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "TUXXHDZJE_7016-6704-7528-7216",
+      "label": "TUXXHDZJE_7016-6704-7528-7216",
+      "path": "gallery/TUXXHDZJE_7016-6704-7528-7216",
+      "rgb_url": "/data/gallery/TUXXHDZJE_7016-6704-7528-7216/rgb.webp",
+      "nir_url": "/data/gallery/TUXXHDZJE_7016-6704-7528-7216/nir.webp",
+      "gt_url": "/data/gallery/TUXXHDZJE_7016-6704-7528-7216/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/TUXXHDZJE_7016-6704-7528-7216/pred_run1.webp",
+        "run2": "/data/gallery/TUXXHDZJE_7016-6704-7528-7216/pred_run2.webp",
+        "run3": "/data/gallery/TUXXHDZJE_7016-6704-7528-7216/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "UFXM7YRNG_10422-1423-10934-1935",
+      "label": "UFXM7YRNG_10422-1423-10934-1935",
+      "path": "gallery/UFXM7YRNG_10422-1423-10934-1935",
+      "rgb_url": "/data/gallery/UFXM7YRNG_10422-1423-10934-1935/rgb.webp",
+      "nir_url": "/data/gallery/UFXM7YRNG_10422-1423-10934-1935/nir.webp",
+      "gt_url": "/data/gallery/UFXM7YRNG_10422-1423-10934-1935/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/UFXM7YRNG_10422-1423-10934-1935/pred_run1.webp",
+        "run2": "/data/gallery/UFXM7YRNG_10422-1423-10934-1935/pred_run2.webp",
+        "run3": "/data/gallery/UFXM7YRNG_10422-1423-10934-1935/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "UFXM7YRNG_10422-399-10934-911",
+      "label": "UFXM7YRNG_10422-399-10934-911",
+      "path": "gallery/UFXM7YRNG_10422-399-10934-911",
+      "rgb_url": "/data/gallery/UFXM7YRNG_10422-399-10934-911/rgb.webp",
+      "nir_url": "/data/gallery/UFXM7YRNG_10422-399-10934-911/nir.webp",
+      "gt_url": "/data/gallery/UFXM7YRNG_10422-399-10934-911/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/UFXM7YRNG_10422-399-10934-911/pred_run1.webp",
+        "run2": "/data/gallery/UFXM7YRNG_10422-399-10934-911/pred_run2.webp",
+        "run3": "/data/gallery/UFXM7YRNG_10422-399-10934-911/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "UFXM7YRNG_10422-911-10934-1423",
+      "label": "UFXM7YRNG_10422-911-10934-1423",
+      "path": "gallery/UFXM7YRNG_10422-911-10934-1423",
+      "rgb_url": "/data/gallery/UFXM7YRNG_10422-911-10934-1423/rgb.webp",
+      "nir_url": "/data/gallery/UFXM7YRNG_10422-911-10934-1423/nir.webp",
+      "gt_url": "/data/gallery/UFXM7YRNG_10422-911-10934-1423/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/UFXM7YRNG_10422-911-10934-1423/pred_run1.webp",
+        "run2": "/data/gallery/UFXM7YRNG_10422-911-10934-1423/pred_run2.webp",
+        "run3": "/data/gallery/UFXM7YRNG_10422-911-10934-1423/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_10114-16319-10626-16831",
+      "label": "XIRID8PGA_10114-16319-10626-16831",
+      "path": "gallery/XIRID8PGA_10114-16319-10626-16831",
+      "rgb_url": "/data/gallery/XIRID8PGA_10114-16319-10626-16831/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_10114-16319-10626-16831/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_10114-16319-10626-16831/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_10114-16319-10626-16831/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_10114-16319-10626-16831/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_10114-16319-10626-16831/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_10114-17343-10626-17855",
+      "label": "XIRID8PGA_10114-17343-10626-17855",
+      "path": "gallery/XIRID8PGA_10114-17343-10626-17855",
+      "rgb_url": "/data/gallery/XIRID8PGA_10114-17343-10626-17855/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_10114-17343-10626-17855/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_10114-17343-10626-17855/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_10114-17343-10626-17855/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_10114-17343-10626-17855/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_10114-17343-10626-17855/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_10114-9151-10626-9663",
+      "label": "XIRID8PGA_10114-9151-10626-9663",
+      "path": "gallery/XIRID8PGA_10114-9151-10626-9663",
+      "rgb_url": "/data/gallery/XIRID8PGA_10114-9151-10626-9663/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_10114-9151-10626-9663/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_10114-9151-10626-9663/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_10114-9151-10626-9663/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_10114-9151-10626-9663/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_10114-9151-10626-9663/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_10296-16903-10808-17415",
+      "label": "XIRID8PGA_10296-16903-10808-17415",
+      "path": "gallery/XIRID8PGA_10296-16903-10808-17415",
+      "rgb_url": "/data/gallery/XIRID8PGA_10296-16903-10808-17415/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_10296-16903-10808-17415/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_10296-16903-10808-17415/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_10296-16903-10808-17415/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_10296-16903-10808-17415/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_10296-16903-10808-17415/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_12344-15367-12856-15879",
+      "label": "XIRID8PGA_12344-15367-12856-15879",
+      "path": "gallery/XIRID8PGA_12344-15367-12856-15879",
+      "rgb_url": "/data/gallery/XIRID8PGA_12344-15367-12856-15879/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_12344-15367-12856-15879/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_12344-15367-12856-15879/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_12344-15367-12856-15879/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_12344-15367-12856-15879/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_12344-15367-12856-15879/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_13698-959-14210-1471",
+      "label": "XIRID8PGA_13698-959-14210-1471",
+      "path": "gallery/XIRID8PGA_13698-959-14210-1471",
+      "rgb_url": "/data/gallery/XIRID8PGA_13698-959-14210-1471/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_13698-959-14210-1471/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_13698-959-14210-1471/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_13698-959-14210-1471/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_13698-959-14210-1471/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_13698-959-14210-1471/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_1410-17343-1922-17855",
+      "label": "XIRID8PGA_1410-17343-1922-17855",
+      "path": "gallery/XIRID8PGA_1410-17343-1922-17855",
+      "rgb_url": "/data/gallery/XIRID8PGA_1410-17343-1922-17855/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_1410-17343-1922-17855/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_1410-17343-1922-17855/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_1410-17343-1922-17855/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_1410-17343-1922-17855/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_1410-17343-1922-17855/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_16952-22535-17464-23047",
+      "label": "XIRID8PGA_16952-22535-17464-23047",
+      "path": "gallery/XIRID8PGA_16952-22535-17464-23047",
+      "rgb_url": "/data/gallery/XIRID8PGA_16952-22535-17464-23047/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_16952-22535-17464-23047/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_16952-22535-17464-23047/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_16952-22535-17464-23047/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_16952-22535-17464-23047/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_16952-22535-17464-23047/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_17464-22023-17976-22535",
+      "label": "XIRID8PGA_17464-22023-17976-22535",
+      "path": "gallery/XIRID8PGA_17464-22023-17976-22535",
+      "rgb_url": "/data/gallery/XIRID8PGA_17464-22023-17976-22535/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_17464-22023-17976-22535/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_17464-22023-17976-22535/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_17464-22023-17976-22535/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_17464-22023-17976-22535/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_17464-22023-17976-22535/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_20024-20999-20536-21511",
+      "label": "XIRID8PGA_20024-20999-20536-21511",
+      "path": "gallery/XIRID8PGA_20024-20999-20536-21511",
+      "rgb_url": "/data/gallery/XIRID8PGA_20024-20999-20536-21511/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_20024-20999-20536-21511/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_20024-20999-20536-21511/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_20024-20999-20536-21511/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_20024-20999-20536-21511/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_20024-20999-20536-21511/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_20354-10175-20866-10687",
+      "label": "XIRID8PGA_20354-10175-20866-10687",
+      "path": "gallery/XIRID8PGA_20354-10175-20866-10687",
+      "rgb_url": "/data/gallery/XIRID8PGA_20354-10175-20866-10687/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_20354-10175-20866-10687/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_20354-10175-20866-10687/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_20354-10175-20866-10687/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_20354-10175-20866-10687/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_20354-10175-20866-10687/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_21890-959-22402-1471",
+      "label": "XIRID8PGA_21890-959-22402-1471",
+      "path": "gallery/XIRID8PGA_21890-959-22402-1471",
+      "rgb_url": "/data/gallery/XIRID8PGA_21890-959-22402-1471/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_21890-959-22402-1471/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_21890-959-22402-1471/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_21890-959-22402-1471/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_21890-959-22402-1471/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_21890-959-22402-1471/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_23938-14783-24450-15295",
+      "label": "XIRID8PGA_23938-14783-24450-15295",
+      "path": "gallery/XIRID8PGA_23938-14783-24450-15295",
+      "rgb_url": "/data/gallery/XIRID8PGA_23938-14783-24450-15295/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_23938-14783-24450-15295/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_23938-14783-24450-15295/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_23938-14783-24450-15295/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_23938-14783-24450-15295/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_23938-14783-24450-15295/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_24632-12295-25144-12807",
+      "label": "XIRID8PGA_24632-12295-25144-12807",
+      "path": "gallery/XIRID8PGA_24632-12295-25144-12807",
+      "rgb_url": "/data/gallery/XIRID8PGA_24632-12295-25144-12807/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_24632-12295-25144-12807/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_24632-12295-25144-12807/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_24632-12295-25144-12807/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_24632-12295-25144-12807/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_24632-12295-25144-12807/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_25986-10175-26498-10687",
+      "label": "XIRID8PGA_25986-10175-26498-10687",
+      "path": "gallery/XIRID8PGA_25986-10175-26498-10687",
+      "rgb_url": "/data/gallery/XIRID8PGA_25986-10175-26498-10687/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_25986-10175-26498-10687/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_25986-10175-26498-10687/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_25986-10175-26498-10687/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_25986-10175-26498-10687/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_25986-10175-26498-10687/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_4994-17343-5506-17855",
+      "label": "XIRID8PGA_4994-17343-5506-17855",
+      "path": "gallery/XIRID8PGA_4994-17343-5506-17855",
+      "rgb_url": "/data/gallery/XIRID8PGA_4994-17343-5506-17855/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_4994-17343-5506-17855/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_4994-17343-5506-17855/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_4994-17343-5506-17855/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_4994-17343-5506-17855/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_4994-17343-5506-17855/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_898-11711-1410-12223",
+      "label": "XIRID8PGA_898-11711-1410-12223",
+      "path": "gallery/XIRID8PGA_898-11711-1410-12223",
+      "rgb_url": "/data/gallery/XIRID8PGA_898-11711-1410-12223/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_898-11711-1410-12223/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_898-11711-1410-12223/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_898-11711-1410-12223/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_898-11711-1410-12223/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_898-11711-1410-12223/pred_run3.webp"
+      },
+      "alert": null
+    },
+    {
+      "id": "XIRID8PGA_898-1471-1410-1983",
+      "label": "XIRID8PGA_898-1471-1410-1983",
+      "path": "gallery/XIRID8PGA_898-1471-1410-1983",
+      "rgb_url": "/data/gallery/XIRID8PGA_898-1471-1410-1983/rgb.webp",
+      "nir_url": "/data/gallery/XIRID8PGA_898-1471-1410-1983/nir.webp",
+      "gt_url": "/data/gallery/XIRID8PGA_898-1471-1410-1983/gt.webp",
+      "predictions": {
+        "run1": "/data/gallery/XIRID8PGA_898-1471-1410-1983/pred_run1.webp",
+        "run2": "/data/gallery/XIRID8PGA_898-1471-1410-1983/pred_run2.webp",
+        "run3": "/data/gallery/XIRID8PGA_898-1471-1410-1983/pred_run3.webp"
+      },
+      "alert": null
+    }
+  ],
+  "note": "pilot gallery for dashboard Explorer/Compare"
 }

@@ -1,0 +1,19 @@
+{
+  "tile_id": "K9KPTX44Z_2668-1912-3180-2424",
+  "coverage_gt": {
+    "double_plant": 0.0,
+    "drydown": 0.0,
+    "endrow": 0.0,
+    "nutrient_deficiency": 0.0,
+    "planter_skip": 0.012119293212890625,
+    "water": 0.0,
+    "waterway": 0.0,
+    "weed_cluster": 0.0
+  },
+  "alerts_gt": [
+    {
+      "class": "planter_skip",
+      "coverage_pct": 1.21
+    }
+  ]
+}

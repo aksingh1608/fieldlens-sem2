@@ -89,6 +89,41 @@ export default function OverviewPage() {
           </p>
         </div>
 
+        <div>
+          <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+            Key visuals
+          </h2>
+          <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+            Report graphs and Explorer/Compare tiles ship with this build. Open{" "}
+            <Link href="/explorer" className="underline underline-offset-2">
+              Explorer
+            </Link>
+            ,{" "}
+            <Link href="/compare" className="underline underline-offset-2">
+              Compare
+            </Link>
+            , or{" "}
+            <Link href="/results" className="underline underline-offset-2">
+              Results
+            </Link>{" "}
+            for the full set.
+          </p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/figures/sample_predictions.png"
+              alt="Sample predictions versus ground truth"
+              className="w-full rounded-md border border-zinc-200 dark:border-zinc-700"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/figures/training_curves.png"
+              alt="Training curves for three runs"
+              className="w-full rounded-md border border-zinc-200 dark:border-zinc-700"
+            />
+          </div>
+        </div>
+
         <div className="flex flex-wrap gap-3">
           <Link
             href={GITHUB_URL}

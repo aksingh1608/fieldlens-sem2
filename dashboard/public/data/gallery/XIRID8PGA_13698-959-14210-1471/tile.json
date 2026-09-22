@@ -1,0 +1,19 @@
+{
+  "tile_id": "XIRID8PGA_13698-959-14210-1471",
+  "coverage_gt": {
+    "double_plant": 0.0,
+    "drydown": 0.84765625,
+    "endrow": 0.0,
+    "nutrient_deficiency": 0.0,
+    "planter_skip": 0.0,
+    "water": 0.0,
+    "waterway": 0.0,
+    "weed_cluster": 0.0
+  },
+  "alerts_gt": [
+    {
+      "class": "drydown",
+      "coverage_pct": 84.77
+    }
+  ]
+}

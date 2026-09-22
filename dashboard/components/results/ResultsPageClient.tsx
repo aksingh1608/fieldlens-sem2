@@ -10,6 +10,7 @@ import {
   TrainingCurvesSection,
 } from "./ResultsCharts";
 import { RunMetricsTable } from "./MetricsTable";
+import { ReportFigures } from "./ReportFigures";
 import { DataUnavailable } from "../DataUnavailable";
 
 export function ResultsPageClient() {
@@ -96,6 +97,11 @@ export function ResultsPageClient() {
       <section>
         <h2 className="mb-3 text-lg font-semibold">Efficiency</h2>
         <EfficiencyTable data={data} />
+      </section>
+
+      <section>
+        <h2 className="mb-3 text-lg font-semibold">Report figures</h2>
+        <ReportFigures />
       </section>
 
       {data.status === "pending_runs" ? (
