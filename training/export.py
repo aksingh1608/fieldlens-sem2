@@ -513,6 +513,7 @@ def main() -> None:
         }
 
     gallery_index = {"tiles": [], "note": "images not exported yet"}
+    gallery_index_path = out_root / "gallery" / "index.json"
     if args.allow_images:
         subset_root = repo_path(data_cfg["subset_root"])
         split_csv = repo_path(data_cfg["split_csv"])
@@ -531,7 +532,22 @@ def main() -> None:
         gallery_index = {"tiles": tiles_meta, "note": "exported with --allow-images and run overlays"}
         print(f"Exported {len(tiles_meta)} gallery tiles with prediction overlays")
     else:
-        print("Skipped gallery images (pass --allow-images only after AK approval).")
+        # Keep an existing gallery index so metrics-only export does not blank Explorer/Compare.
+        if gallery_index_path.is_file():
+            try:
+                prev = json.loads(gallery_index_path.read_text())
+                if isinstance(prev, dict) and prev.get("tiles"):
+                    gallery_index = prev
+                    print(
+                        f"Kept existing gallery index ({len(prev['tiles'])} tiles). "
+                        "Pass --allow-images to rebuild images and overlays."
+                    )
+                else:
+                    print("Skipped gallery images (pass --allow-images only after AK approval).")
+            except json.JSONDecodeError:
+                print("Skipped gallery images (pass --allow-images only after AK approval).")
+        else:
+            print("Skipped gallery images (pass --allow-images only after AK approval).")
 
     if all(results["runs"].get(r) and results["runs"][r].get("metrics") for r in args.runs):
         results["status"] = "complete" if results.get("tile_compare") else "partial"

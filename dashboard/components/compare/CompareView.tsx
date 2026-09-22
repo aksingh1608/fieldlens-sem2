@@ -121,19 +121,12 @@ export function CompareView() {
                 src={panel.url}
                 alt={`${panel.label} for tile ${tile?.id ?? "none"}`}
                 className="h-40 w-full object-cover sm:h-48"
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
-                  const fallback = e.currentTarget.nextElementSibling;
-                  if (fallback instanceof HTMLElement) fallback.hidden = false;
-                }}
               />
-            ) : null}
-            <div
-              className="flex h-40 items-center justify-center bg-zinc-100 sm:h-48 dark:bg-zinc-900"
-              hidden={Boolean(panel.url)}
-            >
-              <DataUnavailable />
-            </div>
+            ) : (
+              <div className="flex h-40 items-center justify-center bg-zinc-100 sm:h-48 dark:bg-zinc-900">
+                <DataUnavailable />
+              </div>
+            )}
           </figure>
         ))}
       </div>

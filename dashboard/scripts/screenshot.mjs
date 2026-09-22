@@ -9,7 +9,9 @@ const fs = require("fs");
 const path = require("path");
 
 const BASE = process.argv[2] || "http://localhost:3000";
-const OUT = path.join(__dirname, "..", "..", "docs", "screenshots");
+const OUT =
+  process.argv[3] ||
+  path.join(__dirname, "..", "..", "data", "images", "dashboard");
 const PAGES = [
   "overview",
   "explorer",

@@ -16,14 +16,23 @@ function metricValue(
   const top = (data as Record<string, unknown>)[key];
   if (typeof top === "number") return top;
   const nested = data.metrics as Record<string, unknown> | null | undefined;
-  const mapKey =
-    key === "modified_miou"
-      ? "modified_miou"
-      : key === "pixel_accuracy"
-        ? "pixel_accuracy"
-        : key;
-  const fromNested = nested?.[mapKey];
-  return typeof fromNested === "number" ? fromNested : null;
+  if (!nested) return null;
+  if (key === "modified_miou" && typeof nested.modified_miou === "number") {
+    return nested.modified_miou;
+  }
+  if (key === "pixel_accuracy" && typeof nested.pixel_accuracy === "number") {
+    return nested.pixel_accuracy;
+  }
+  if (key === "tile_alert_f1") {
+    const tm = nested.tile_metrics as Record<string, { f1?: number }> | undefined;
+    if (!tm) return null;
+    const vals = Object.values(tm)
+      .map((v) => v?.f1)
+      .filter((v): v is number => typeof v === "number");
+    if (!vals.length) return null;
+    return vals.reduce((a, b) => a + b, 0) / vals.length;
+  }
+  return null;
 }
 
 export function RunMetricsTable({
