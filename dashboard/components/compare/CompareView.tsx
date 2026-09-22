@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import type { GalleryTile } from "@/lib/types/gallery";
-import type { ResultsJson, TileCompareEntry } from "@/lib/types/results";
+import type { TileCompareEntry } from "@/lib/types/results";
 import { loadGalleryIndex } from "@/lib/data/loadGallery";
 import { loadResults } from "@/lib/data/loadResults";
 import { formatNumber } from "@/lib/format";

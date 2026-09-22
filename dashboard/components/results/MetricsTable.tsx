@@ -13,7 +13,7 @@ function metricValue(
   key: "pixel_miou" | "modified_miou" | "tile_alert_f1" | "pixel_accuracy",
 ): number | null {
   if (!data) return null;
-  const top = (data as Record<string, unknown>)[key];
+  const top = (data as unknown as Record<string, unknown>)[key];
   if (typeof top === "number") return top;
   const nested = data.metrics as Record<string, unknown> | null | undefined;
   if (!nested) return null;
