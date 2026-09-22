@@ -1,6 +1,5 @@
 import { readFileSync, existsSync } from "fs";
 import path from "path";
-import { notFound } from "next/navigation";
 import { PageShell } from "@/components/PageShell";
 import { TryInference } from "@/components/try/TryInference";
 
@@ -21,7 +20,19 @@ function tryEnabled(): boolean {
 
 export default function TryPage() {
   if (!tryEnabled()) {
-    notFound();
+    return (
+      <PageShell
+        title="Try in browser"
+        description="Optional Phase 10 demo. Currently disabled for this deploy."
+      >
+        <p className="text-sm text-zinc-600 dark:text-zinc-400">
+          Set <code className="rounded bg-zinc-100 px-1 dark:bg-zinc-800">enable_try_page</code> in{" "}
+          <code className="rounded bg-zinc-100 px-1 dark:bg-zinc-800">public/data/site.json</code> and
+          place <code className="rounded bg-zinc-100 px-1 dark:bg-zinc-800">fieldlens.onnx</code> under{" "}
+          <code className="rounded bg-zinc-100 px-1 dark:bg-zinc-800">public/models/</code> to enable.
+        </p>
+      </PageShell>
+    );
   }
 
   return (

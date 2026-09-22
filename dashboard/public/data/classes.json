@@ -1,0 +1,105 @@
+{
+  "source": "training/configs/data.yaml",
+  "background": {
+    "id": "background",
+    "label": "Background",
+    "color": "#282828",
+    "color_rgb": [
+      40,
+      40,
+      40
+    ]
+  },
+  "anomalies": [
+    {
+      "id": "double_plant",
+      "label": "Double plant",
+      "color": "#dc503c",
+      "color_rgb": [
+        220,
+        80,
+        60
+      ]
+    },
+    {
+      "id": "drydown",
+      "label": "Drydown",
+      "color": "#b48c28",
+      "color_rgb": [
+        180,
+        140,
+        40
+      ]
+    },
+    {
+      "id": "endrow",
+      "label": "Endrow",
+      "color": "#50a0c8",
+      "color_rgb": [
+        80,
+        160,
+        200
+      ]
+    },
+    {
+      "id": "nutrient_deficiency",
+      "label": "Nutrient deficiency",
+      "color": "#3cb45a",
+      "color_rgb": [
+        60,
+        180,
+        90
+      ]
+    },
+    {
+      "id": "planter_skip",
+      "label": "Planter skip",
+      "color": "#a050b4",
+      "color_rgb": [
+        160,
+        80,
+        180
+      ]
+    },
+    {
+      "id": "water",
+      "label": "Water",
+      "color": "#285ac8",
+      "color_rgb": [
+        40,
+        90,
+        200
+      ]
+    },
+    {
+      "id": "waterway",
+      "label": "Waterway",
+      "color": "#1ea0b4",
+      "color_rgb": [
+        30,
+        160,
+        180
+      ]
+    },
+    {
+      "id": "weed_cluster",
+      "label": "Weed cluster",
+      "color": "#c83c8c",
+      "color_rgb": [
+        200,
+        60,
+        140
+      ]
+    }
+  ],
+  "anomaly_ids": [
+    "double_plant",
+    "drydown",
+    "endrow",
+    "nutrient_deficiency",
+    "planter_skip",
+    "water",
+    "waterway",
+    "weed_cluster"
+  ]
+}

@@ -21,8 +21,8 @@ build/
 # Reference zip extract (do not confuse with training/)
 /fieldlens-main/
 
-# Exported dashboard data (tiles, results, gallery images)
-/dashboard/public/data/
+# Gallery tile images (AV redistribution risk + size). Keep JSON metrics in git for Vercel.
+/dashboard/public/data/gallery/
 /dashboard/public/models/*.onnx
 
 # Node / Next.js
